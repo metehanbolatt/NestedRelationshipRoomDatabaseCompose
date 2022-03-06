@@ -27,7 +27,7 @@ data class Song(
 )
 
 @Entity(primaryKeys = ["playlistId", "songId"])
-data class PlayListSongCrossRef(
+data class PlaylistSongCrossRef(
     val playlistId: Int,
     val songId: Int
 )
@@ -37,7 +37,7 @@ data class PlaylistWithSongs(
     @Relation(
         parentColumn = "playlistId",
         entityColumn = "songId",
-        associateBy = Junction(PlayListSongCrossRef::class)
+        associateBy = Junction(PlaylistSongCrossRef::class)
     )
     val song: List<Song>
 )

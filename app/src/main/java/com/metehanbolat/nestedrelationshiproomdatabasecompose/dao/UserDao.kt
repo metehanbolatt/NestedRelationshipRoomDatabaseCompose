@@ -16,7 +16,7 @@ interface UserDao {
     suspend fun insertSong(item: List<Song>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlaylistSongCrossRef(item: List<PlayListSongCrossRef>)
+    suspend fun insertPlaylistSongCrossRef(item: List<PlaylistSongCrossRef>)
 
     @Transaction
     @Query("SELECT * FROM User WHERE userId = :userId")

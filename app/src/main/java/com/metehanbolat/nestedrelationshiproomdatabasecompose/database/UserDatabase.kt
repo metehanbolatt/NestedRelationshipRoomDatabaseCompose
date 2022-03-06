@@ -6,11 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.metehanbolat.nestedrelationshiproomdatabasecompose.dao.UserDao
 import com.metehanbolat.nestedrelationshiproomdatabasecompose.entity.Playlist
-import com.metehanbolat.nestedrelationshiproomdatabasecompose.entity.PlayListSongCrossRef
+import com.metehanbolat.nestedrelationshiproomdatabasecompose.entity.PlaylistSongCrossRef
 import com.metehanbolat.nestedrelationshiproomdatabasecompose.entity.Song
 import com.metehanbolat.nestedrelationshiproomdatabasecompose.entity.User
 
-@Database(entities = [User::class, Playlist::class, Song::class, PlayListSongCrossRef::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, Playlist::class, Song::class, PlaylistSongCrossRef::class], version = 1, exportSchema = false)
 abstract class UserDatabase: RoomDatabase() {
     abstract fun userDao(): UserDao
 
