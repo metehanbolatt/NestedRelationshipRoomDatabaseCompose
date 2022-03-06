@@ -11,9 +11,9 @@ data class User(
 )
 
 @Entity
-data class PlayList(
+data class Playlist(
     @PrimaryKey
-    val playListId: Int,
+    val playlistId: Int,
     val userCreatorId: Int,
     val playlistName: String
 )
@@ -33,7 +33,7 @@ data class PlayListSongCrossRef(
 )
 
 data class PlaylistWithSongs(
-    @Embedded val playlist: PlayList,
+    @Embedded val playlist: Playlist,
     @Relation(
         parentColumn = "playlistId",
         entityColumn = "songId",
@@ -45,7 +45,7 @@ data class PlaylistWithSongs(
 data class UserWithPlaylistAndSongs(
     @Embedded val user: User,
     @Relation(
-        entity = PlayList::class,
+        entity = Playlist::class,
         parentColumn = "userId",
         entityColumn = "userCreatorId"
     )
